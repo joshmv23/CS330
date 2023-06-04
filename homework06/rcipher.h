@@ -1,29 +1,23 @@
-#ifndef VCIPHER_H_
-#define VCIPHER_H_
-#include "cipher.h"
-#include "kcipher.h"
+#ifndef RCIPHER_H_ 
+#define RCIPHER_H_
+#include "ccipher.h"
 
 using namespace std;
 
 /* A class that implements a
-   Vigenere cipher class. It 
-   inherts KCipher */
+   ROT13 cipher class. It 
+   inherts class CCipher */
 // TODO: Implement this class
-
-class VCipher: public KCipher{
-	protected:
-		struct CipherCheshire;
-		CipherCheshire *smile;
-	private:
-		string key;
-	public:
-		VCipher();
-		VCipher(string key);
-		~VCipher();
-		string encrypt(string raw) override;
-		string decrypt(string enc) override;
-
+class RCipher: public CCipher{
+public:
+   RCipher();
+   ~RCipher();
+   string encrypt(string raw) override;
+   string decrypt(string enc) override;
 };
 
+void rotate_string(string& in_str, int rot);
 #endif
+
+
 
